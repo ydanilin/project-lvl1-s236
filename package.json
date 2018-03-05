@@ -1,0 +1,39 @@
+{
+  "name": "brain-games-dan-hexlet",
+  "version": "1.0.0",
+  "description": "command line mini-games inspired by Hexlet project",
+  "main": "index.js",
+  "bin": {
+    "brain-games": "dist/bin/brain-games.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ydanilin/project-lvl1-s128.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "babel-node": "babel-node",
+    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
+    "prepublishOnly": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "first",
+    "project",
+    "Hexlet"
+  ],
+  "author": "Yury Danilin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ydanilin/project-lvl1-s128/issues"
+  },
+  "homepage": "https://github.com/ydanilin/project-lvl1-s128#readme",
+  "devDependencies": {
+    "babel-cli": "*",
+    "babel-core": "*",
+    "babel-preset-env": "*",
+    "babel-preset-stage-0": "*"
+  }
+}
