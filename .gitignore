@@ -3,4 +3,7 @@
 dist
 flow-typed
 .tern-port
+Vagrantfile
+.vagrant
+package-lock.json
 
