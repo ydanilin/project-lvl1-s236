@@ -1,14 +1,15 @@
 {
   "name": "brain-games-dan-hexlet",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "description": "command line mini-games inspired by Hexlet project",
   "main": "index.js",
   "bin": {
-    "brain-games": "dist/bin/brain-games.js"
+    "brain-games": "dist/bin/brain-games.js",
+    "brain-even": "dist/bin/brain-even.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ydanilin/project-lvl1-s128.git"
+    "url": "git+https://github.com/ydanilin/project-lvl1-s236.git"
   },
   "files": [
     "dist"
@@ -18,7 +19,8 @@
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
     "prepublishOnly": "npm run build",
     "eslint": "eslint",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "even": "npm run babel-node -- src/bin/brain-even.js"
   },
   "keywords": [
     "first",
@@ -42,6 +44,7 @@
     "eslint-plugin-import": "*"
   },
   "dependencies": {
-    "readline-sync": "*"
+    "readline-sync": "*",
+    "hexlet-pairs": "*"
   }
 }
