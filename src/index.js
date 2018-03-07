@@ -1,36 +1,49 @@
 
 import readlineSync from 'readline-sync';
 import { car, cdr } from 'hexlet-pairs';
-import evenOddGame from './games/even';
-import calculatorGame from './games/calc';
 
-
-const greetingText = 'Welcome to Brain Games!';
-
-const getUserName = () => readlineSync.question('May I have your name? ');
-
-// Internal functions
-const gRandom = (num = 900) => Math.floor(Math.random() * num); // Random number from 0 to 900
 
 // Game engine
-// Plug in desired game as a function
-// (playFunction parameter)
-// The plugged function must return cons(<number>, <correct answer string>)
-// for example: cons(7, 'no') of cons(16, 'yes')
-const playGame = (userName, playFunction, numRounds, cRound = 0) => {
+/**
+ * invoked by gameDialog
+ * the engine expects that gameFunction
+ * must return cons(<number or string>, <correct answer string>)
+ * for example: cons(7, 'no') of cons('5 + 2', '7')
+ */
+
+const gameEngine = (gameFunction, numRounds, cRound = 0) => {
   if (cRound === numRounds) {
-    return `Congratulations, ${userName}`;
+    return true;
   }
-  const gameCase = playFunction();
+  const gameCase = gameFunction();
   console.log(`Question: ${car(gameCase)}`);
   const answer = readlineSync.question('Your answer: ');
   const correct = cdr(gameCase);
   if (answer !== correct) {
-    return `'${answer}' is wrong answer ;(. Correct answer was '${correct}'.\nLet's try again, ${userName}!`;
+    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correct}'.`);
+    return false;
   }
   console.log('Correct!');
-  return playGame(userName, playFunction, numRounds, cRound + 1);
+  return gameEngine(gameFunction, numRounds, cRound + 1);
 };
 
 
-export { greetingText, getUserName, gRandom, playGame, evenOddGame, calculatorGame };
+// Game dialog
+/**
+ * the user of this default function is a game file (which realizes game logic)
+ * this function is like bootstrap, which shows welcome message,
+ * asks user name, invokes the game engine and terminates the story
+ */
+export default (howToAnswer, gameFunction) => {
+  console.log('Welcome to the Brain Games!');
+  console.log(`${howToAnswer}\n`);
+  const name = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${name}`);
+  // game invocation
+  const gameWin = gameEngine(gameFunction, 3);
+  if (gameWin) {
+    console.log(`Congratulations, ${name}!`);
+  } else {
+    console.log(`Let's try again, ${name}!`);
+  }
+};
