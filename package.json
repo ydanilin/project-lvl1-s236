@@ -1,11 +1,12 @@
 {
   "name": "brain-games-dan-hexlet",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "command line mini-games inspired by Hexlet project",
   "main": "index.js",
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
-    "brain-even": "dist/bin/brain-even.js"
+    "brain-even": "dist/bin/brain-even.js",
+    "brain-calc": "dist/bin/brain-calc.js"
   },
   "repository": {
     "type": "git",
@@ -20,7 +21,8 @@
     "prepublishOnly": "npm run build",
     "eslint": "eslint",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "even": "npm run babel-node -- src/bin/brain-even.js"
+    "even": "npm run babel-node -- src/bin/brain-even.js",
+    "calc": "npm run babel-node -- src/bin/brain-calc.js"
   },
   "keywords": [
     "first",

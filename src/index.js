@@ -1,25 +1,16 @@
 
 import readlineSync from 'readline-sync';
-import { cons, car, cdr } from 'hexlet-pairs';
+import { car, cdr } from 'hexlet-pairs';
+import evenOddGame from './games/even';
+import calculatorGame from './games/calc';
+
 
 const greetingText = 'Welcome to Brain Games!';
 
 const getUserName = () => readlineSync.question('May I have your name? ');
 
 // Internal functions
-const random = (num = 900) => Math.floor(Math.random() * num); // Random number from 0 to 900
-
-// Even odd game itself
-const evenOddGame = () => {
-  const askedNumber = random();
-  let answer = '';
-  if (askedNumber % 2 === 0) {
-    answer = 'yes';
-  } else {
-    answer = 'no';
-  }
-  return cons(askedNumber, answer);
-};
+const gRandom = (num = 900) => Math.floor(Math.random() * num); // Random number from 0 to 900
 
 // Game engine
 // Plug in desired game as a function
@@ -42,4 +33,4 @@ const playGame = (userName, playFunction, numRounds, cRound = 0) => {
 };
 
 
-export { greetingText, getUserName, playGame, evenOddGame };
+export { greetingText, getUserName, gRandom, playGame, evenOddGame, calculatorGame };
