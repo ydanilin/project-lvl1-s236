@@ -1,5 +1,6 @@
 
 // Internal functions
-const gRandom = (num = 900) => Math.floor(Math.random() * num); // Random number from 0 to 900
+const gRandom = (maxN = 900, minN = 0) =>
+  Math.floor(Math.random() * ((maxN - minN) + 1)) + minN;
 
 export default gRandom;

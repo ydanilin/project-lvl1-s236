@@ -31,7 +31,7 @@ import gRandom from '../utils';
 
 
 const maxGeneratedValue = 146;
-const howToAnswer = 'Answer "yes" if number even otherwise answer "no"';
+const howToAnswer = 'What is the result of the expression?';
 
 
 // gameFunction
