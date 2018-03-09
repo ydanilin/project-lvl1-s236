@@ -17,3 +17,5 @@ bal:
 	npm run balance
 prgs:
 	npm run prgs
+prime:
+	npm run prime

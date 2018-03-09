@@ -1,26 +1,11 @@
 
 import { cons } from 'hexlet-pairs';
 import gameDialog from '..';
-import gRandom from '../utils';
+import { gRandom, isPrime } from '../utils';
 
 
 const maxGeneratedValue = 90;
 const howToAnswer = 'Find the greatest common divisor of given numbers.';
-
-
-const isPrime = (num) => {
-  if (num < 2) {
-    return false;
-  }
-  let i = 2;
-  while (i <= num / 2) {
-    if (num % i === 0) {
-      return false;
-    }
-    i += 1;
-  }
-  return true;
-};
 
 
 const nonPrimeRandom = () => {

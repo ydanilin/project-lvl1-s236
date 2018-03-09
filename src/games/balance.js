@@ -2,7 +2,7 @@
 import { l, cons, reverse, reduce } from 'hexlet-pairs-data';
 import { cons as tupleCons } from 'hexlet-pairs';
 import gameDialog from '..';
-import gRandom from '../utils';
+import { gRandom } from '../utils';
 
 
 const makeBalList = (high, amtHigh, targetLen) => {

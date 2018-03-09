@@ -27,7 +27,7 @@
 
 import { cons } from 'hexlet-pairs';
 import gameDialog from '..';
-import gRandom from '../utils';
+import { gRandom } from '../utils';
 
 
 const maxGeneratedValue = 146;

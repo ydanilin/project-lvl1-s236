@@ -28,7 +28,7 @@
 
 import { cons } from 'hexlet-pairs';
 import gameDialog from '..';
-import gRandom from '../utils';
+import { gRandom } from '../utils';
 
 
 const howToAnswer = 'Answer "yes" if number even otherwise answer "no"';
