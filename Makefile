@@ -13,3 +13,5 @@ calc:
 	npm run calc
 gcd:
 	npm run gcd
+bal:
+	npm run balance
