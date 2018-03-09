@@ -15,3 +15,5 @@ gcd:
 	npm run gcd
 bal:
 	npm run balance
+prgs:
+	npm run prgs
