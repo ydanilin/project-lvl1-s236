@@ -1,8 +1,8 @@
 {
   "name": "brain-games-dan-hexlet",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "description": "command line mini-games inspired by Hexlet project",
-  "main": "index.js",
+  "main": "dist/index.js",
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
     "brain-even": "dist/bin/brain-even.js",
